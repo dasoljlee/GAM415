@@ -16,6 +16,7 @@
 #include "Components/DecalComponent.h"
 #include "NiagaraComponent.h"
 #include <NiagaraFunctionLibrary.h>
+#include "PerlineProcTerrain.h"
 
 AShooterProjectile::AShooterProjectile()
 {
@@ -130,6 +131,13 @@ void AShooterProjectile::NotifyHit(class UPrimitiveComponent* MyComp, AActor* Ot
 
 		MatInstance->SetVectorParameterValue("Color", randColor);
 		MatInstance->SetScalarParameterValue("Frame", frameNum);
+
+		APerlineProcTerrain* procTerrain = Cast<APerlineProcTerrain>(Other);
+
+		if (procTerrain)
+		{
+			procTerrain->AlterMesh(Hit.ImpactPoint);
+		}
 
 	}
 }
