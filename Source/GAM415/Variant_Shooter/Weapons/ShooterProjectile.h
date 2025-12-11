@@ -10,6 +10,7 @@ class USphereComponent;
 class UProjectileMovementComponent;
 class ACharacter;
 class UPrimitiveComponent;
+class UNiagaraSystem;
 
 /**
  *  Simple projectile class for a first person shooter game
@@ -41,6 +42,9 @@ class GAM415_API AShooterProjectile : public AActor
 
 	UPROPERTY()
 	UMaterialInstanceDynamic* dmiMat;
+
+	UPROPERTY(EditAnywhere)
+	UNiagaraSystem* colorP;
 
 
 protected:
