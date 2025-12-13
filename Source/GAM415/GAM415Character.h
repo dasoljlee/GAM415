@@ -33,6 +33,9 @@ class AGAM415Character : public ACharacter
 
 protected:
 
+	//UPROPERTY(EditAnywhere)
+	//bool isTeleporting;
+
 	/** Jump Input Action */
 	UPROPERTY(EditAnywhere, Category ="Input")
 	UInputAction* JumpAction;
@@ -51,6 +54,9 @@ protected:
 	
 public:
 	AGAM415Character();
+
+	UPROPERTY(EditAnywhere)
+	bool isTeleporting;
 
 protected:
 
